@@ -10,7 +10,7 @@ def main():
     
     kk_img = pg.image.load("ex01/fig/3.png") #練習2 こうかとん画像Surfaceの生成
     kk_img = pg.transform.flip(kk_img,True,False) #練習2 左右反転
-    kk_imgs = [kk_img, pg.transform.rotozoom(kk_img, 10, 1.0)] #
+    kk_imgs = [kk_img, pg.transform.rotozoom(kk_img, 10, 1.0)] #練習3 こうかとん10°回転
 
     tmr = 0
     while True:
@@ -18,7 +18,8 @@ def main():
             if event.type == pg.QUIT: return
 
         screen.blit(bg_img, [0, 0]) #練習4 背景画像の表示
-        screen.blit(kk_imgs[1],[300,200]) #こうかとんの表示
+        #screen.blit(kk_imgs[1],[300,200]) #こうかとんの表示
+        screen.blit(kk_imgs[tmr%2],[300,200]) #10°回転したこうかとんの表示
         pg.display.update()
         tmr += 1        
         clock.tick(10)
