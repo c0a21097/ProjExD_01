@@ -17,12 +17,15 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        screen.blit(bg_img, [0, 0]) #練習4 背景画像の表示
+        #screen.blit(bg_img, [0, 0]) #練習4 背景画像の表示
+        x=tmr%1600
+        screen.blit(bg_img, [-x, 0]) #練習4 背景画像の表示
+        screen.blit(bg_img, [1600-x, 0])
         #screen.blit(kk_imgs[1],[300,200]) #こうかとんの表示
-        screen.blit(kk_imgs[tmr%2],[300,200]) #10°回転したこうかとんの表示
+        screen.blit(kk_imgs[tmr%2],[300,200]) #練習5 10°回転したこうかとんの表示 %2で0か1の動き
         pg.display.update()
         tmr += 1        
-        clock.tick(10)
+        clock.tick(100)
 
 
 if __name__ == "__main__":
