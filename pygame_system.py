@@ -8,7 +8,7 @@ def main():
     font = pg.font.Font(None, 80)
 
     enn = pg.Surface((20, 20))
-    pg.draw.circle(enn, (255, 0, 0), (10, 10), 10)
+    pg.draw.circle(enn, (0, 0, 255), (10, 10), 10)
     enn.set_colorkey((0, 0, 0))
 
     tmr = 0
